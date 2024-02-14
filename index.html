@@ -5,7 +5,7 @@
         .star-rating {
             direction: rtl;
             display: inline-flex;
-            font-size: 30px;
+            font-size: 30px; /* PC用のフォントサイズ */
         }
         .star-rating input[type="radio"] {
             display: none;
@@ -18,6 +18,12 @@
         .star-rating label:hover ~ label,
         .star-rating input[type="radio"]:checked ~ label {
             color: #f5d31a;
+        }
+        /* スマートフォン用のスタイル（画面幅が600px以下の場合） */
+        @media (max-width: 600px) {
+            .star-rating {
+                font-size: 50px; /* スマホ用のフォントサイズを大きくする */
+            }
         }
     </style>
 </head>
@@ -35,3 +41,18 @@
         <input type="radio" id="1-star" name="rating" value="1" />
         <label for="1-star">&#9733;</label>
     </div>
+
+    <script>
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const rating = parseInt(e.target.value);
+                if (rating >= 4) {
+                    window.location.href = 'https://www.osgroup.co.jp/';
+                } else {
+                    window.location.href = 'https://wagamachi-sauna.com/teaser/';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
