@@ -15,7 +15,7 @@
         .star-rating {
             direction: rtl;
             display: inline-flex;
-            font-size: 30px; /* PC用のフォントサイズ */
+            font-size: 150px; /* PC用のフォントサイズ */
         }
         .star-rating input[type="radio"] {
             display: none;
@@ -32,7 +32,7 @@
         /* スマートフォン用のスタイル（画面幅が600px以下の場合） */
         @media (max-width: 600px) {
             .star-rating {
-                font-size: 50px; /* スマホ用のフォントサイズを大きくする */
+                font-size: 150px; /* スマホ用のフォントサイズを大きくする */
             }
         }
     </style>
@@ -58,7 +58,7 @@
         document.querySelectorAll('.star-rating input[type="radio"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 const rating = parseInt(e.target.value);
-                if (rating >= 4) {
+                if (rating >= 3) {
                     window.location.href = 'https://g.page/r/Cd-ADymcqo5nEBM/review';
                 } else {
                     window.location.href = 'https://forms.gle/d8uYonLMnLZHnZSz8';
